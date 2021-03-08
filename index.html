@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+
+        //template literals: 
+
+        let word1 = 'mariem'; 
+        let word2 = 'ben mabrouk';
+        let num1= 24;
+        let num2= 28;
+
+const FullName = ` First name: ${word1} \n Last name: ${word2} \n âge: ${num1}`;
+console.log(FullName);
+
+       //Arrowfunctions:
+       let x=2;
+       let y=4;
+
+       const z =(x,y)=>  x*y; 
+       
+       document.getElementById("demo").innerHTML = z(x,y);
+   
+
+       //higher order function or first class function 
+
+       let sayHello=()=> alert `HELLO!`;
+       let sayBye=()=> alert `GOODBYE`;
+
+       let saySomething = somethingToDo => {
+                       somethingToDo();
+                   };
+
+        saySomething(sayHello);
+
+        //Arrays:
+
+        const people = [{ name: 'Max' }, { name: 'Jack' }, { name: 'Marry' }];
+        let name= 'Jack';
+        console.log(people);
+
+        // .find() rechercher un élément d'un tableau: 
+
+        function findPerson(name) {
+                return people.find(person =>person.name == name)
+                             };
+
+                           
+       // .map() method : 
+
+       const products = [
+    { name: 'Milk', price: 15 },
+    { name: 'Water', price: 9 },
+    { name: 'Bread', price: 5 },
+    ]
+
+
+    const changeProducts = () =>
+     products.map(product => ({ ...product, price: product.price + 2 }));
+     console.log(changeProducts());
+     console.log(products);
+                             
+
+     // .reduce() method that reduces the array to a single value: 
+
+
+     const data = [5, 10, 15, 20, 25]
+     const res = data.reduce((total, currentValue) =>  total + currentValue);
+     console.log(data);
+     console.log(res);
+
+     // destructuring es6: 
+
+     let { address } = {address:{city:"New York", country:"USA"}};
+     let {city, country} = address;
+     console.log(city);
+     console.log(country);
+
+     //spreading operator: 
+
+
+     let object1 = { firstName: 'John', lastName: 'Brown' }
+     let object2 = { age: 25 }
+
+     let newObject1 = { ...object1, ...object2 }
+     console.log(newObject1);
+
+
+       
+       
+
+
+    </script>
+    
+</body>
+</html>
